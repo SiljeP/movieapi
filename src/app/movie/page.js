@@ -14,7 +14,7 @@ export default function Movie() {
                 width={500}
                 height={300}
                 alt="Icon of a star" className='relative' />
-            <article className="bg-white px-5 rounded-t-lg absolute -mt-[70%]">
+            <article className="bg-white px-5 rounded-t-lg absolute -mt-[70%] dark:bg-black">
                 <h1 className="pt-5 text-black font-bold">Insert title here</h1>
                 <div className='flex gap-1 items-center'>
                     <Image
@@ -31,15 +31,15 @@ export default function Movie() {
                     <div className='bg-indigo-200 rounded-full px-3 py-1.5  text-indigo-400 uppercase text-xs '>genre</div>
                 </div>
                 <div className="grid grid-cols-3 grid-rows-2 gap-1">
-                    <h3 className="col-start-1 row-start-1 text-xs text-slate-500">Length</h3>
+                    <h3 className="col-start-1 row-start-1 text-xs text-slate-500 dark:text-gray-500">Length</h3>
                     <p className="col-start-1 row-start-2 text-xs">2h 28 min</p>
-                    <h3 className="col-start-2 row-start-1 text-xs text-slate-500">Language</h3>
+                    <h3 className="col-start-2 row-start-1 text-xs text-slate-500 dark:text-gray-500">Language</h3>
                     <p className="col-start-2 row-start-2 text-xs">English</p>
-                    <h3 className="col-start-3 row-start-1 text-xs text-slate-500">Rating</h3>
+                    <h3 className="col-start-3 row-start-1 text-xs text-slate-500 dark:text-gray-500">Rating</h3>
                     <p className="col-start-3 row-start-2 text-xs">PG-13</p>
                 </div>
                 <SectionHeading heading="description" showSeeMore={false} />
-                <p className="text-slate-500 text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A reprehenderit cum neque vel, ad vitae repellat soluta, nobis facere quisquam hic velit! Enim dolore fugit ipsa, quo a nihil provident nam eius sit debitis distinctio impedit quaerat alias unde corrupti quis vel similique ullam temporibus nulla inventore placeat saepe doloribus.</p>
+                <p className="text-slate-500 dark:text-gray-500 text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A reprehenderit cum neque vel, ad vitae repellat soluta, nobis facere quisquam hic velit! Enim dolore fugit ipsa, quo a nihil provident nam eius sit debitis distinctio impedit quaerat alias unde corrupti quis vel similique ullam temporibus nulla inventore placeat saepe doloribus.</p>
                 <SectionHeading heading="cast" />
                 <div className="flex pt-4">
                     <Cast />

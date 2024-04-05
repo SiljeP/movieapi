@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <NextUIProvider>
       <header className=" mx-5 grid grid-cols-3 items-center">
-        <h1 className="col-start-2 text-center py-5 text-2xl font-bold">MyMovies</h1>
+        <h1 className="col-start-2 text-center py-5 text-2xl font-bold dark:text-blue-200">MyMovies</h1>
         <div className="col-start-3 right-0 absolute">
           <Darkmode className=" " />
         </div>
