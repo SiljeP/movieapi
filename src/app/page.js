@@ -1,27 +1,42 @@
 "use client"
+import Darkmode from "@/components/darkmode";
+import SeeMore from "@/components/seemore";
 import MoreMovieOverview from "@/components/more-movie-overview";
 import MovieOverview from "@/components/movie-overview";
 import Navbar from "@/components/navbar";
+import { NextUIProvider } from "@nextui-org/react";
+import SectionHeading from "@/components/sectionheading";
 
 
 export default function Home() {
   return (
-    <>
-      <header className="w-full">
-        <h1 className="text-center py-5 text-2xl font-bold">MyMovies</h1>
+    <NextUIProvider>
+      <header className=" mx-5 grid grid-cols-3 items-center">
+        <h1 className="col-start-2 text-center py-5 text-2xl font-bold">MyMovies</h1>
+        <div className="col-start-3 right-0 absolute">
+          <Darkmode className=" " />
+        </div>
       </header>
-      <main>
+      <main className="mx-5">
         <article>
-          <h2 className="capitalize text-xl font-bold px-5">Now showing</h2>
-          <ul className="flex">
+
+          <SectionHeading heading="now showing" />
+
+          <ul className="flex overflow-x-auto">
+            <li><MovieOverview /></li>
+            <li><MovieOverview /></li>
+            <li><MovieOverview /></li>
+            <li><MovieOverview /></li>
             <li><MovieOverview /></li>
             <li><MovieOverview /></li>
             <li><MovieOverview /></li>
           </ul>
         </article>
-        <article>
-          <h2 className="capitalize text-xl font-bold px-5">Popular</h2>
+        <article className="pt-5">
+          <SectionHeading heading="popular" />
           <ul>
+            <li><MoreMovieOverview /></li>
+            <li><MoreMovieOverview /></li>
             <li><MoreMovieOverview /></li>
             <li><MoreMovieOverview /></li>
           </ul>
@@ -30,7 +45,7 @@ export default function Home() {
 
       <Navbar />
 
-    </>
+    </NextUIProvider>
 
   );
 }
