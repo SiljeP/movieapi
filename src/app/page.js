@@ -1,11 +1,10 @@
 "use client"
 import Darkmode from "@/components/darkmode";
-import SeeMore from "@/components/seemore";
-import MoreMovieOverview from "@/components/more-movie-overview";
-import MovieOverview from "@/components/movie-overview";
 import Navbar from "@/components/navbar";
 import { NextUIProvider } from "@nextui-org/react";
 import SectionHeading from "@/components/sectionheading";
+import NowShowing from "@/components/nowshowing";
+import PopularMovies from "@/components/popular";
 
 
 export default function Home() {
@@ -21,24 +20,15 @@ export default function Home() {
         <article>
 
           <SectionHeading heading="now showing" />
-
           <ul className="flex overflow-x-auto">
-            <li><MovieOverview /></li>
-            <li><MovieOverview /></li>
-            <li><MovieOverview /></li>
-            <li><MovieOverview /></li>
-            <li><MovieOverview /></li>
-            <li><MovieOverview /></li>
-            <li><MovieOverview /></li>
+            <NowShowing />
           </ul>
         </article>
         <article className="pt-5">
           <SectionHeading heading="popular" />
           <ul>
-            <li><MoreMovieOverview /></li>
-            <li><MoreMovieOverview /></li>
-            <li><MoreMovieOverview /></li>
-            <li><MoreMovieOverview /></li>
+            <li><PopularMovies /></li>
+
           </ul>
         </article>
       </main>
