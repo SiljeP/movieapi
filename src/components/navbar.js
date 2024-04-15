@@ -2,6 +2,7 @@
 import { PiFilmReel } from "react-icons/pi";
 import { BsTicket } from "react-icons/bs";
 import { FaRegBookmark } from "react-icons/fa6";
+import Link from "next/link";
 
 
 export default function Navbar() {
@@ -13,7 +14,9 @@ export default function Navbar() {
                         <PiFilmReel className="text-2xl text-black dark:text-white" />
                     </li>
                     <li>
-                        <BsTicket className="text-2xl text-black dark:text-white rotate-90" />
+                        <Link href="/signin" >
+                            <BsTicket className="text-2xl text-black dark:text-white rotate-90" />
+                        </Link>
                     </li>
                     <li>
                         <FaRegBookmark className="text-xl text-black dark:text-white" />

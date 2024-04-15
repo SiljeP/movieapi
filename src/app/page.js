@@ -18,17 +18,15 @@ export default function Home() {
       </header>
       <main className="mx-5">
         <article>
-
           <SectionHeading heading="now showing" />
           <ul className="flex overflow-x-auto">
             <NowShowing />
           </ul>
         </article>
-        <article className="pt-5">
+        <article className="pt-5 mb-40 pb-20">
           <SectionHeading heading="popular" />
           <ul>
             <li><PopularMovies /></li>
-
           </ul>
         </article>
       </main>

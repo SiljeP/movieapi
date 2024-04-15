@@ -9,6 +9,7 @@ import { FaStar } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa6";
 import { IoPlayCircle } from "react-icons/io5";
 import { useState, useEffect } from "react"
+import { FaRegBookmark } from "react-icons/fa6";
 
 
 //Single movie detail overview
@@ -69,7 +70,10 @@ export default function Movie({ params }) {
                 <p className="capitalize text-white">Play trailer</p>
             </div>
             <article className="bg-white px-5 rounded-t-lg absolute -mt-[70%] dark:bg-black">
-                <h1 className="pt-5 text-black font-bold dark:text-blue-200">{movie?.title}</h1>
+                <div className="flex justify-between pt-5">
+                    <h1 className=" text-black font-bold dark:text-blue-200">{movie?.title}</h1>
+                    <FaRegBookmark className="text-xl mt-2" />
+                </div>
                 <div className='flex gap-1 items-center'>
                     <FaStar className="text-yellow-500 text-sm mr-1" />
                     <p className='text-xs text-slate-500 '>{movie?.vote_average?.toFixed(1)}/10 IMDb</p>
