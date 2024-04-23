@@ -7,7 +7,7 @@ const merriweather = Merriweather_Sans({
 })
 
 
-//Giving section headings diffrent props with it, so that I can use the same component several times but changing out the title, classname and if there's a seeMore button
+//Giving section headings different props with it, so that I can use the same component several times but changing out the title, classname and if there's a seeMore button
 
 export default function SectionHeading({ heading, className, showSeeMore = true }) {
     return (

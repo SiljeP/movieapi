@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
+import { GoClock } from "react-icons/go";
 import { useState, useEffect } from "react"
 
 //SHOWING MORE INFO UNDER POPULAR MOVIES
@@ -57,12 +58,7 @@ export default function PopularMovies() {
                                 <div className='bg-indigo-200 rounded-full px-3 py-1.5  text-indigo-400 uppercase text-xs '>genre</div>
                             </div>
                             <div className='flex flex-row gap-2 py-2 items-center'>
-                                <Image
-                                    src="/images/clock.svg"
-                                    width={24}
-                                    height={24}
-                                    alt="Icon of a clock"
-                                />
+                                <GoClock className="dark:text-white text-sm mr-1" />
                                 <p>1h 47m</p>
                             </div>
 
