@@ -14,7 +14,13 @@ export default function Home() {
   const [searchResults, setSearchResults] = useState([])
 
   async function searchHandler(event) {
-    console.log(event.target.value)
+    // console.log(event.target.value)
+    // if (event.target.value !== "") {
+    //   event.target.classList.add("w-[300px]")
+    // } else {
+    //   event.target.classList.remove("w-[300px]")
+    // }
+
     const response = await Axios.get(`https://api.themoviedb.org/3/search/multi?query=${event.target.value}`, {
       headers: {
         Authorization: "Bearer " + process.env.NEXT_PUBLIC_ACCESS_TOKEN
@@ -26,10 +32,10 @@ export default function Home() {
   return (
     <NextUIProvider>
       <header className=" mx-5 grid grid-cols-3 items-center">
-        <div className="relative">
-          <input onChange={searchHandler} type="search" className="border border-gray-300" />
-          <div className="absolute h-[80dvh] w-[90vw] px-6 py-6 bg-white z-50">
-            Results
+        <div className="relative w-24">
+          <input onChange={searchHandler} type="search" placeholder="Search" className="border border-gray-500 px-2 rounded-md w-full transition-all duration-200 focus:w-[300px]" />
+          <div className={`absolute h-[80dvh] w-[90vw] px-6 py-2 bg-gray-200 dark:bg-stone-800 z-50 ${!searchResults.length && "hidden"} rounded-md`}>
+            results
             {searchResults.map(result => result.media_type === "movie" && <MovieListItem movie={result} key={result.id} />)}
           </div>
         </div>
@@ -53,9 +59,7 @@ export default function Home() {
           </ul>
         </article>
       </main>
-
       <Navbar />
-
     </NextUIProvider>
 
   );

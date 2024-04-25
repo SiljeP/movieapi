@@ -27,7 +27,7 @@ export default function PopularMovies() {
             .then(response => response.json())
             .then(data => {
                 setMovies(data.results)
-                console.log(data.results);
+                // console.log(data.results);
 
             })
 
@@ -44,7 +44,7 @@ export default function PopularMovies() {
                     className='pt-2 pr-2 pb-2'>
                     <div className='flex flex-wrap row gap-1 '>
                         <Link href={"/movie/" + movie.id}>
-                            <Image key={movie.id} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} height={170} width={120} alt="movie poster" />
+                            <Image key={movie.id} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} priority={true} height={600} width={500} alt="movie poster" className="h-auto w-[120px]" />
                         </Link>
                         <div className='px-2 w-[40%]'>
                             <h1 className='font-bold pt-2'>{movie.title}</h1>

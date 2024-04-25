@@ -24,7 +24,7 @@ export default function NowShowing() {
             .then(response => response.json())
             .then(data => {
                 setMovies(data.results)
-                console.log(data.results);
+                //console.log(data.results);
 
             })
 
@@ -41,7 +41,7 @@ export default function NowShowing() {
             {movies.map((movie) => (
                 <li key={movie.id} className='pt-2 pr-2 pb-2 flex-shrink-0 w-[143px]'>
                     <Link href={"/movie/" + movie.id}>
-                        <Image key={movie.id} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} height={170} width={120} alt="movie poster" />
+                        <Image key={movie.id} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} priority={true} height={600} width={500} alt="movie poster" className="h-auto w-[120px]" />
                     </Link>
                     <h1 className='font-bold pt-2'>{movie.title}</h1>
                     <div className='flex gap-1 items-center'>

@@ -30,7 +30,7 @@ export default function Movie({ params }) {
         fetch(`https://api.themoviedb.org/3/movie/${params.id}?append_to_response=credits,videos&language=en-US&api_key=${KEY}`, options)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                //console.log(data)
                 setMovie(data)
                 setGenres(data?.genres)
             })
@@ -56,9 +56,11 @@ export default function Movie({ params }) {
         <>
 
             <Image src={`https://image.tmdb.org/t/p/w500/${movie && movie?.poster_path}`}
+                priority={true}
+                height={600}
                 width={500}
-                height={300}
-                alt="Movie poster" className='relative' />
+                alt="movie poster"
+                className="h-auto w-[500px] relative" />
             <Link href="/" >
                 <FaArrowLeft className='absolute top-0 left-0 mt-8 ml-5 text-2xl text-white' />
             </Link>
