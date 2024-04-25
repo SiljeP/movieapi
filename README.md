@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Movie App
 
-## Getting Started
+A PWA movie app to keep up to date on current movies, and see information on your favourites. Made using the free The Movie Database API.
+- [TMDB API](https://developer.themoviedb.org/reference/intro/getting-started) 
 
-First, run the development server:
+## Functionallity
+- Sign in using The Movie Database login (uses cookies and cache)
+- See movies currently showing
+- See popular movies
+- Dark or lightmode (whatever you choose get stored in local storage)
+- A PWA so you can download it to your device
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Things in the project that I'm still missing
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Make favourites work
+- Add styling to search
+- Get a placeholder image for search results that doesn't have an image
+- Add new fetch to get genres under popular movies list
+- Also make sure the runtime is correct on stuff
+- Make "see more" buttons work (both on detailed movie view with cast, and also the lists)
+- Add videos to movie details with React player
+- Publish entire site on Netlify
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
