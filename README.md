@@ -12,11 +12,11 @@ A PWA movie app to keep up to date on current movies, and see information on you
 
 ### Things in the project that I'm still missing
 
-- Make favourites work
+- Make favourites work //session id still makes a fuss
 - Add styling to search
 - Get a placeholder image for search results that doesn't have an image
 - Add new fetch to get genres under popular movies list
-- Also make sure the runtime is correct on stuff
+- Also make sure the runtime is correct on stuff (big error here)
 - Make "see more" buttons work (both on detailed movie view with cast, and also the lists)
 - Add videos to movie details with React player
 - Publish entire site on Netlify

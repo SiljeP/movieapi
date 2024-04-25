@@ -7,13 +7,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa6";
-import { IoPlayCircle } from "react-icons/io5";
 import { useState, useEffect } from "react"
-import { FaRegBookmark } from "react-icons/fa6";
+import ReactPlayer from 'react-player/youtube'
+import AddToFavs from "@/components/add-to-favs";
+import { useParams } from "next/navigation"
+
+
 
 
 //Single movie detail overview
 export default function Movie({ params }) {
+    const { id } = useParams()
 
     const KEY = "2c721e0d8526bcfb16eb555b28fb11a0"
     const [movie, setMovie] = useState()
@@ -30,7 +34,7 @@ export default function Movie({ params }) {
         fetch(`https://api.themoviedb.org/3/movie/${params.id}?append_to_response=credits,videos&language=en-US&api_key=${KEY}`, options)
             .then(response => response.json())
             .then(data => {
-                //console.log(data)
+                console.log(data)
                 setMovie(data)
                 setGenres(data?.genres)
             })
@@ -54,27 +58,37 @@ export default function Movie({ params }) {
 
     return (
         <>
-
-            <Image src={`https://image.tmdb.org/t/p/w500/${movie && movie?.poster_path}`}
-                priority={true}
-                height={600}
-                width={500}
-                alt="movie poster"
-                className="h-auto w-[500px] relative" />
+            <div className="relative overflow-x-hidden top-0">
+                <ReactPlayer
+                    light={
+                        <Image src={`https://image.tmdb.org/t/p/w500/${movie && movie?.poster_path}`}
+                            priority={true}
+                            height={750}
+                            width={430}
+                            alt="movie poster"
+                            className="overflow-x-hidden mx-auto my-0 p-0 " />}
+                    url={`https://www.youtube.com/watch?v=${movie?.videos.results[1].key}`}
+                    height={750}
+                    width={430}
+                    style={{ height: "200px", width: "100%", padding: "0", margin: "0", }}
+                />
+            </div>
             <Link href="/" >
                 <FaArrowLeft className='absolute top-0 left-0 mt-8 ml-5 text-2xl text-white' />
             </Link>
             <div className="top-0 mt-8 mr-5 right-0 absolute">
                 <Darkmode className=" " />
             </div>
+            {/* 
             <div className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+
                 <IoPlayCircle className=' text-6xl text-white rounded-full' />
                 <p className="capitalize text-white">Play trailer</p>
-            </div>
+            </div> */}
             <article className="bg-white px-5 rounded-t-lg absolute -mt-[70%] dark:bg-black">
                 <div className="flex justify-between pt-5">
                     <h1 className=" text-black font-bold dark:text-blue-200">{movie?.title}</h1>
-                    <FaRegBookmark className="text-xl mt-2" />
+                    <AddToFavs id={id} className="text-xl mt-2" />
                 </div>
                 <div className='flex gap-1 items-center'>
                     <FaStar className="text-yellow-500 text-sm mr-1" />
@@ -102,7 +116,6 @@ export default function Movie({ params }) {
                 </div>
 
             </article>
-
         </>
     );
 }

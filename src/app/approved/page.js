@@ -13,7 +13,6 @@ export default function ApprovedPage() {
 
     async function init(request_token) {
         const session_id = await createSessionId(request_token)
-
         await createSessionCookie(session_id)
         const account = await getAccount(session_id)
         await createAccountCookie(account)

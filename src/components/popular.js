@@ -59,7 +59,7 @@ export default function PopularMovies() {
                             </div>
                             <div className='flex flex-row gap-2 py-2 items-center'>
                                 <GoClock className="dark:text-white text-sm mr-1" />
-                                <p>1h 47m</p>
+                                <p>testtime</p>
                             </div>
 
                         </div>
