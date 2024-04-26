@@ -8,7 +8,7 @@ import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useState, useEffect } from "react"
-import ReactPlayer from 'react-player/youtube'
+import ReactPlayer from 'react-player'
 import AddToFavs from "@/components/add-to-favs";
 import { useParams } from "next/navigation"
 
@@ -58,19 +58,24 @@ export default function Movie({ params }) {
 
     return (
         <>
-            <div className="relative overflow-x-hidden top-0">
+            <div className="relative h-[650px] w-full object-contain">
                 <ReactPlayer
                     light={
-                        <Image src={`https://image.tmdb.org/t/p/w500/${movie && movie?.poster_path}`}
-                            priority={true}
-                            height={750}
-                            width={430}
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={`https://image.tmdb.org/t/p/w500/${movie && movie?.poster_path}`}
                             alt="movie poster"
-                            className="overflow-x-hidden mx-auto my-0 p-0 " />}
+                            style={{
+                                backgroundSize: "contain",
+                                width: "100%",
+                                height: "550px",
+                                paddingTop: "2em"
+                            }} />}
+                    // className="overflow-x-hidden w-full mx-auto my-0 p-0 object-fit "
+                    // style={{ height: "", width: "100%", objectFit: "scale down" }} />}
                     url={`https://www.youtube.com/watch?v=${movie?.videos.results[1].key}`}
-                    height={750}
-                    width={430}
-                    style={{ height: "200px", width: "100%", padding: "0", margin: "0", }}
+                    height="450px"
+                    width="100%"
+                    style={{ height: "auto", padding: 0 }}
                 />
             </div>
             <Link href="/" >
@@ -81,11 +86,10 @@ export default function Movie({ params }) {
             </div>
             {/* 
             <div className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-
                 <IoPlayCircle className=' text-6xl text-white rounded-full' />
                 <p className="capitalize text-white">Play trailer</p>
             </div> */}
-            <article className="bg-white px-5 rounded-t-lg absolute -mt-[70%] dark:bg-black">
+            <article className="bg-white px-5 rounded-t-lg absolute -mt-[60%] dark:bg-black">
                 <div className="flex justify-between pt-5">
                     <h1 className=" text-black font-bold dark:text-blue-200">{movie?.title}</h1>
                     <AddToFavs id={id} className="text-xl mt-2" />
