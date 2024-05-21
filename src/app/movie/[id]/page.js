@@ -13,8 +13,6 @@ import AddToFavs from "@/components/add-to-favs";
 import { useParams } from "next/navigation"
 
 
-
-
 //Single movie detail overview
 export default function Movie({ params }) {
     const { id } = useParams()
@@ -40,7 +38,7 @@ export default function Movie({ params }) {
             })
             .catch(err => console.error(err))
 
-    }, [])
+    }, [params.id])
 
     function timeConvert(n) {
         var num = n;

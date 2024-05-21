@@ -18,6 +18,5 @@ A PWA movie app to keep up to date on current movies, and see information on you
 - Add new fetch to get genres under popular movies list
 - Also make sure the runtime is correct on stuff (big error here)
 - Make "see more" buttons work (both on detailed movie view with cast, and also the lists)
-- Add videos to movie details with React player
 - Publish entire site on Netlify
 
