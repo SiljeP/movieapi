@@ -3,7 +3,6 @@
 import Cast from "@/components/cast";
 import Darkmode from "@/components/darkmode";
 import SectionHeading from "@/components/sectionheading";
-import Image from "next/image";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa6";
@@ -17,7 +16,7 @@ import { useParams } from "next/navigation"
 export default function Movie({ params }) {
     const { id } = useParams()
 
-    const KEY = "2c721e0d8526bcfb16eb555b28fb11a0"
+    const KEY = process.env.NEXT_PUBLIC_API_KEY
     const [movie, setMovie] = useState()
     const [genres, setGenres] = useState([])
 
@@ -38,7 +37,7 @@ export default function Movie({ params }) {
             })
             .catch(err => console.error(err))
 
-    }, [params.id])
+    }, [params.id, KEY])
 
     function timeConvert(n) {
         var num = n;

@@ -9,7 +9,7 @@ export default function NowShowing() {
 
     //NOW SHOWING
 
-    const KEY = "2c721e0d8526bcfb16eb555b28fb11a0"
+    const KEY = process.env.NEXT_PUBLIC_API_KEY
     const [movies, setMovies] = useState([])
 
     useEffect(function () {
@@ -28,6 +28,7 @@ export default function NowShowing() {
 
             })
 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []) //dependecy array must be empty for the useeffect to only run once.
 
 
