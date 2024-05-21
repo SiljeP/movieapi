@@ -6,6 +6,7 @@ import createSessionId from "@/lib/create-session-id"
 import getAccount from "@/lib/get-account"
 import { useSearchParams, useRouter } from "next/navigation"
 import { useEffect } from "react"
+import { Suspense } from 'react'
 
 export default function ApprovedPage() {
     const searchParams = useSearchParams()
@@ -18,17 +19,20 @@ export default function ApprovedPage() {
         await createAccountCookie(account)
         return router.push("/favourites")
     }
+    <Suspense>
+        {useEffect(function () {
+            const request_token = searchParams.get("request_token")
 
-    useEffect(function () {
-        const request_token = searchParams.get("request_token")
 
-        if (!request_token) {
-            return router.push("/signin")
-        }
+            if (!request_token) {
+                return router.push("/signin")
+            }
 
-        init(request_token)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+            init(request_token)
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [])}
+    </Suspense>
+
 
     return null
 }
