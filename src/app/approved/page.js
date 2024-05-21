@@ -19,20 +19,17 @@ export default function ApprovedPage() {
         await createAccountCookie(account)
         return router.push("/favourites")
     }
-    <Suspense>
-        {useEffect(function () {
-            const request_token = searchParams.get("request_token")
+    useEffect(function () {
+        const request_token = searchParams.get("request_token")
 
 
-            if (!request_token) {
-                return router.push("/signin")
-            }
+        if (!request_token) {
+            return router.push("/signin")
+        }
 
-            init(request_token)
-            // eslint-disable-next-line react-hooks/exhaustive-deps
-        }, [])}
-    </Suspense>
-
+        init(request_token)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return null
 }
